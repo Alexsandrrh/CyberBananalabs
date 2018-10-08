@@ -1,0 +1,49 @@
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #000;
+	color: lightgreen;
+}
+
+input, button {
+	outline: none;
+	padding: 0;
+	margin: 0;
+	border: none;
+	background: none;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 48px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	-webkit-user-select: none;
+}
+
+.card {
+	padding: 15px;
+	border: 2px solid #fff;
+}
+
+.auth-panel {
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+

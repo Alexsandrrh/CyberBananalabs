@@ -1,0 +1,64 @@
+.input label {
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.input__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input__field,
+.input__btn {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    height: 26px;
+    padding: 0 5px;
+}
+
+.input__field:hover,
+.input__field:focus,
+.input__btn:hover,
+.input__btn:focus {
+    color: lightgreen;
+    border-color: lightgreen;
+}
+
+.input__field {
+    margin-right: 10px;
+    width: 80%;
+}
+
+.input__btn {
+    text-align: center;
+    width: calc(20% - 10px);
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.input__error {
+    overflow: hidden;
+    height: 0;
+    color: red;
+    transition: .3s ease-out;
+}
+
+.input__error span {
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input.-error .input__error {
+    height: 16px;
+}
