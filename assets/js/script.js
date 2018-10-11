@@ -61,10 +61,11 @@ $(document).ready(function () {
         if (!userLoggedIn) {
             authParent.addClass('-error');
         } else {
-            authPanel.hide();
-            // setUserActions();
+            interfaceBuilder.showMessage(`Welcome on board, ${currentUser.name}`);
         }
     }
+
+    // interfaceBuilder.build(interfaceBuilder.parent, 'login');
 
     function setUserActions() {
         if (currentUser.type == 'Админ') {

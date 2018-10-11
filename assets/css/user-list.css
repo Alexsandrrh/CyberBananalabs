@@ -1,0 +1,47 @@
+.user-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.user-list__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 230px;
+}
+
+.user-list__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.user-list__info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100px;
+}
+
+.user-list__type {
+    position: absolute;
+    top: 0;
+    margin-bottom: auto;
+}
+
+.user-list__name {
+    margin-bottom: 7px;
+}
+
+.user-list__id span {
+    font-weight: 900;
+    color: #ffffff;
+    margin-left: 5px;
+}
+

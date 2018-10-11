@@ -36,7 +36,17 @@ h1 {
 	-webkit-user-select: none;
 }
 
+h2 {
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 32px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	-webkit-user-select: none;
+}
+
 .card {
+	font-family: 'Source Sans Pro', sans-serif;
 	padding: 15px;
 	border: 2px solid #fff;
 }

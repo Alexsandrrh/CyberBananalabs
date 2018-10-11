@@ -16,7 +16,6 @@
 
 .input__field,
 .input__btn {
-    font-family: 'Source Sans Pro', sans-serif;
     background: transparent;
     color: #ffffff;
     border: 1px solid #ffffff;
@@ -54,7 +53,6 @@
 
 .input__error span {
     display: block;
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     font-weight: 500;
 }
