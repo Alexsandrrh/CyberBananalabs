@@ -1,6 +1,6 @@
 .user-list {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
@@ -12,12 +12,31 @@
     justify-content: space-between;
     align-items: center;
     width: 230px;
+    cursor: pointer;
+}
+
+.user-list__item .icon-add {
+    width: 60px;
+    height: 60px;
+    fill: #ffffff;
+    margin: 20px auto;
+}
+
+.user-list__item:hover {
+    border-color: lightgreen;
+}
+
+.user-list__item:hover .icon-add {
+    fill: lightgreen;
 }
 
 .user-list__avatar {
-    width: 100px;
-    height: 100px;
+    width: 100px !important;
+    height: 100px !important;
     border-radius: 50%;
+    margin-right: 20px;
+    background-size: cover;
+    background-position: center;
 }
 
 .user-list__info {

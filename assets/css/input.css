@@ -1,3 +1,7 @@
+.input {
+
+}
+
 .input label {
     display: block;
     font-family: 'Source Sans Pro', sans-serif;
@@ -33,6 +37,10 @@
 }
 
 .input__field {
+    width: 100%;
+}
+
+.input__field.-with-btn {
     margin-right: 10px;
     width: 80%;
 }

@@ -56,4 +56,13 @@ h2 {
 	margin: 0 auto;
 }
 
+.row {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: row;
+}
 
+.row > fieldset {
+	width: calc(50% - 15px);
+}

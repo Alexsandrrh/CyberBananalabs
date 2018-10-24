@@ -1,103 +1,67 @@
 $(document).ready(function () {
 
-    let authParent = $('.js-authParent'),
-        inputAuth = $('.js-authInput'),
-        btnAuth = $('.js-authBtn'),
-        authPanel = $('.js-authPanel');
+    let authParent = $('.js-authParent');
 
     let currentUser = null;
     let userLoggedIn = false;
 
-
-    let newUserName = null;
-    let newUserId = null;
-
-    let userPost = null;
     let userList = [
         {
             password: 7589,
+            avatar : 'https://images.unsplash.com/photo-1539545880148-642b8c315b4d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3419b28d098f1f62085c5f4da888ab05&auto=format&fit=crop&w=334&q=80',
             type: 'Админ',
             name: 'Александр',
             age: 16
         },
         {
             password: 3589,
+            avatar : 'https://images.unsplash.com/photo-1539553139747-e2ae5159d2e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89e76f2a8cf3a81c8dba40f5dd01bb0f&auto=format&fit=crop&w=1500&q=80',
             type: 'Юзер',
             name: 'Юра',
             age: 17
         },
         {
             password: '0589',
+            avatar : 'https://images.unsplash.com/photo-1536821571242-75b70c679796?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3de7bb2ee5e90d9bbcbadbcb7066e055&auto=format&fit=crop&w=772&q=80',
             type: 'Хакер',
             name: 'Агент Кокс',
             age: undefined
         }
     ];
 
+    $('body').append(modalService.modals.base);
+    modalService.openModal(modalService.modals.newUser);
 
-    btnAuth.on('click', function () {
-        checkPass(inputAuth.val());
+    interfaceBuilder.buildAdminInterface(userList);
+
+    $('.js-authBtn').on('click', function () {
+        checkPass($('.js-authInput').val());
     });
 
-    inputAuth.focus(function () {
+    $('.js-authInput').focus(function () {
        authParent.removeClass('-error');
     });
 
     $('.auth-form').on('submit', function (e) {
         e.preventDefault();
-       checkPass(inputAuth.val());
+        checkPass($('.js-authInput').val());
     });
 
 
     function checkPass(userPass) {
-        for (let i = 0; i < userList.length; i++) {
-            if (userPass == userList[i].password) {
+        userList.forEach(function (user) {
+            if (userPass == user.password) {
                 userLoggedIn = true;
-                currentUser = userList[i];
+                currentUser = user;
                 console.log(currentUser);
             }
-        }
+        });
 
         if (!userLoggedIn) {
             authParent.addClass('-error');
         } else {
             interfaceBuilder.showMessage(`Welcome on board, ${currentUser.name}`);
         }
-    }
-
-    // interfaceBuilder.build(interfaceBuilder.parent, 'login');
-
-    function setUserActions() {
-        if (currentUser.type == 'Админ') {
-            createNewUser();
-        } else if (currentUser.type == 'Юзер') {
-            createPost();
-        } else if (currentUser.type == 'Хакер') {
-            downloadTheInternet();
-        }
-    }
-
-    function createNewUser() {
-        if (confirm('Добавить нового пользователя?')) {
-            newUserName = prompt('Введите имя нового пользователя:');
-            newUserId = (Math.random() * 100).toFixed();
-            alert(newUserId + ' === ' + newUserName);
-        }
-    }
-
-    function createPost() {
-        userPost = prompt('Напишите что-то прекрасное');
-        if (userPost == '') {
-            alert('Вы нечего не написали');
-            createPost();
-        } else {
-            alert(userPost);
-        }
-
-    }
-
-    function downloadTheInternet() {
-        confirm('Скачать интернет?')
     }
 
 });

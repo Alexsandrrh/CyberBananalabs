@@ -1,53 +1,108 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
+html,
 body {
-    line-height: 1;
+    height: 100%;
 }
 
-ol, ul {
+body,
+ul,
+ol,
+p,
+dl,
+dd,
+figure,
+blockquote,
+pre {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font: inherit;
+    margin: 0;
+}
+
+ul, ol {
+    padding: 0;
     list-style: none;
-}
-
-blockquote, q {
-    quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
 }
 
 table {
     border-collapse: collapse;
     border-spacing: 0;
+    table-layout: fixed;
+}
+
+td,
+th {
+    padding: 0;
+    text-align: left;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+img,
+audio,
+canvas,
+iframe,
+svg,
+video {
+    max-width: 100%; /* Set responsive behaviour */
+    height: auto;
+    vertical-align: middle; /* Remove bottom spacing under element (line-height) */
+}
+
+iframe {
+    border: none;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+input,
+textarea,
+button,
+optgroup,
+select {
+    margin: 0;
+    font-family: inherit;
+    vertical-align: middle;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Fast Tap enables no-delay taps (FastClick-esque) on supporting browsers */
+a,
+button,
+input,
+label,
+select,
+textarea {
+    touch-action: manipulation;
+}
+
+/* Make fonts more sexy */
+body,
+input,
+textarea,
+button,
+select {
+    -webkit-font-smoothing: antialiased;
 }
