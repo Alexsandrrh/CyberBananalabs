@@ -29,10 +29,30 @@ $(document).ready(function () {
         }
     ];
 
-    $('body').append(modalService.modals.base);
-    modalService.openModal(modalService.modals.newUser);
-
     interfaceBuilder.buildAdminInterface(userList);
+
+    $('body').on('click', '.js-addUser',function () {
+        modalService.openModal('newUser');
+    });
+
+    $('body').on('click', '.modal__bg',function () {
+        $('.modal').remove();
+    });
+
+    $('body').on('click', '.js-newUserBtn', () => {
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        let newUser = {};
+        newUser.password = getRandomInt(1000, 9999);
+        newUser.name = $('.js-newNameInput').val();
+        newUser.age = $('.js-newAgeInput').val();
+        newUser.type = $('.js-newTypeInput').val();
+        userList.push(newUser);
+        console.log(userList);
+    });
+
 
     $('.js-authBtn').on('click', function () {
         checkPass($('.js-authInput').val());

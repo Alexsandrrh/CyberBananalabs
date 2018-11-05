@@ -10,7 +10,7 @@ modalService.modals = {
         '                <form class="new-user-form">\n' +
         '                    <div class="row">\n' +
         '                        <!-- -->\n' +
-        '                        <fieldset class="input js-authParent">\n' +
+        '                        <fieldset class="input">\n' +
         '                            <label for="userName">Name</label>\n' +
         '                            <div class="input__container">\n' +
         '                                <input id="userName" type="text" class="input__field js-newNameInput" autocomplete="off">\n' +
@@ -20,7 +20,7 @@ modalService.modals = {
         '                            </div>\n' +
         '                        </fieldset>\n' +
         '\n' +
-        '                        <fieldset class="input js-authParent">\n' +
+        '                        <fieldset class="input">\n' +
         '                            <label for="userAge">Age</label>\n' +
         '                            <div class="input__container">\n' +
         '                                <input id="userAge" type="text" class="input__field js-newAgeInput" autocomplete="off">\n' +
@@ -31,7 +31,7 @@ modalService.modals = {
         '                        </fieldset>\n' +
         '                    </div>\n' +
         '\n' +
-        '                    <fieldset class="input js-authParent">\n' +
+        '                    <fieldset class="input">\n' +
         '                        <label for="userType">Type</label>\n' +
         '                        <div class="input__container">\n' +
         '                            <input id="userType" type="text" class="input__field -with-btn js-newTypeInput" autocomplete="off">\n' +
@@ -45,7 +45,12 @@ modalService.modals = {
 };
 
 modalService.openModal = (modal) => {
-    $('.js-createModal').html(modal);
+    $('body').append(modalService.modals.base);
+    $('.js-createModal').html(modalService.modals[modal]);
+};
+
+modalService.createNewUser = (db) => {
+
 };
 
 
